@@ -1,7 +1,7 @@
 {
-  "name": "nhlstatsapi",
+  "name": "nhl-draft-companion",
   "version": "1.0.0",
-  "description": "A TypeScript/Node.js REST API for NHL player stats, standings, and game scores backed by PostgreSQL",
+  "description": "A TypeScript/Node.js fantasy hockey draft and waiver-wire helper that ranks players using player stats, team stats, strength of schedule, and deployment data (line combos, power play/penalty kill usage), backed by PostgreSQL",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cmkrile/NHLStatsApi.git"
+    "url": "git+https://github.com/cmkrile/NHLDraftCompanion.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/cmkrile/NHLStatsApi/issues"
+    "url": "https://github.com/cmkrile/NHLDraftCompanion/issues"
   },
-  "homepage": "https://github.com/cmkrile/NHLStatsApi#readme",
+  "homepage": "https://github.com/cmkrile/NHLDraftCompanion#readme",
   "dependencies": {
     "axios": "^1.20.0",
     "dotenv": "^17.4.2",
