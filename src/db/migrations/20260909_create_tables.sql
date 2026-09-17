@@ -1,10 +1,9 @@
 /*
 Schema for all info fed into player and goalie ranking algorithm
-
 */
 
 CREATE TABLE  IF NOT EXISTS teams(
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY, 
     name TEXT NOT NULL,
     abbreviation TEXT NOT NULL,
     conference TEXT,
@@ -32,8 +31,16 @@ CREATE TABLE IF NOT EXISTS player_stats(
     points INTEGER NOT NULL DEFAULT 0,
     plus_minus INTEGER NOT NULL DEFAULT 0,
     pim INTEGER NOT NULL DEFAULT 0,
+    evg INTEGER NOT NULL DEFAULT 0,
+    evp INTEGER NOT NULL DEFAULT 0,
     ppg INTEGER NOT NULL DEFAULT 0,
+    ppp INTEGER NOT NULL DEFAULT 0,
     shg INTEGER NOT NULL DEFAULT 0,
+    shp INTEGER NOT NULL DEFAULT 0,
+    otg INTEGER NOT NULL DEFAULT 0,
+    gwg INTEGER NOT NULL DEFAULT 0,
+    shots INTEGER NOT NULL DEFAULT 0,
+    shot_percentage NUMERIC(4,3) NOT NULL DEFAULT 0.0,
     total_shots INTEGER NOT NULL DEFAULT 0,
     cached_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (player_id, season)
@@ -48,11 +55,11 @@ CREATE TABLE IF NOT EXISTS goalie_stats(
     wins INTEGER NOT NULL DEFAULT 0,
     losses INTEGER NOT NULL DEFAULT 0,
     ot_losses INTEGER NOT NULL DEFAULT 0,
-    shut_outs INTEGER NOT NULL DEFAULT 0,
     shots_against INTEGER NOT NULL DEFAULT 0,
     saves INTEGER NOT NULL DEFAULT 0,
     save_percentage NUMERIC(4,3) NOT NULL DEFAULT 0.0,
     goals_against_average NUMERIC(4,2) NOT NULL DEFAULT 0.0,
+    shut_outs INTEGER NOT NULL DEFAULT 0,
     cached_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (player_id, season)
 );
